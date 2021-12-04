@@ -5,4 +5,16 @@ title: VPC Laboratory Inventory
 
 <h2>Laboratory</h2>
 
+<!-- Organizations -->
+{% assign laboratory = site.data.laboratory %}
+{% assign laboratory = laboratory | sort:"Product" %}
 
+<!-- Document -->
+
+{% for lab in laboratory %}
+
+<ul>
+<li><strong>{{ lab.Product }}</strong> ({{ lab.Quantity }}, {{ lab.ID }})</li>
+</ul>
+
+{% endfor %}
